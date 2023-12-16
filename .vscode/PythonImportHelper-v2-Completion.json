@@ -1,0 +1,384 @@
+[
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Item",
+        "importPath": "models.item_model",
+        "description": "models.item_model",
+        "isExtraImport": true,
+        "detail": "models.item_model",
+        "documentation": {}
+    },
+    {
+        "label": "Item",
+        "kind": 6,
+        "importPath": "models.item_model",
+        "description": "models.item_model",
+        "peekOfCode": "class Item(BaseModel):\n    name: str\n    price: float\n    is_offer: Union[bool, None] = None",
+        "detail": "models.item_model",
+        "documentation": {}
+    },
+    {
+        "label": "Producto",
+        "kind": 6,
+        "importPath": "practicas_activas.api_productos",
+        "description": "practicas_activas.api_productos",
+        "peekOfCode": "class Producto(BaseModel):\n    id: Optional[str]\n    nombre: str\n    precio_compra: float\n    precio_venta: float\n    proveedor: str\napp = FastAPI()\nproductos = []\n@app.get('/')\ndef index():",
+        "detail": "practicas_activas.api_productos",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "practicas_activas.api_productos",
+        "description": "practicas_activas.api_productos",
+        "peekOfCode": "def index():\n    return({'mensaje' : 'Bienvenidos a la API de Productos'})\n@app.get('/producto')\ndef obtener_productos():\n    return productos\n@app.post('/producto')\ndef crear_producto(producto: Producto):\n    producto.id = str(uuid())\n    print(producto.id)\n    productos.append(producto)",
+        "detail": "practicas_activas.api_productos",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_productos",
+        "kind": 2,
+        "importPath": "practicas_activas.api_productos",
+        "description": "practicas_activas.api_productos",
+        "peekOfCode": "def obtener_productos():\n    return productos\n@app.post('/producto')\ndef crear_producto(producto: Producto):\n    producto.id = str(uuid())\n    print(producto.id)\n    productos.append(producto)\n    return {'mensaje' : 'Producto creado satisfactoriamente.'}\n@app.get('/producto/{producto_id}')\ndef obtener_producto_por_id(producto_id: str):",
+        "detail": "practicas_activas.api_productos",
+        "documentation": {}
+    },
+    {
+        "label": "crear_producto",
+        "kind": 2,
+        "importPath": "practicas_activas.api_productos",
+        "description": "practicas_activas.api_productos",
+        "peekOfCode": "def crear_producto(producto: Producto):\n    producto.id = str(uuid())\n    print(producto.id)\n    productos.append(producto)\n    return {'mensaje' : 'Producto creado satisfactoriamente.'}\n@app.get('/producto/{producto_id}')\ndef obtener_producto_por_id(producto_id: str):\n    resultado = list(filter(lambda p: p.id == producto_id, productos))\n    if len(resultado):\n        return resultado[0]",
+        "detail": "practicas_activas.api_productos",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_producto_por_id",
+        "kind": 2,
+        "importPath": "practicas_activas.api_productos",
+        "description": "practicas_activas.api_productos",
+        "peekOfCode": "def obtener_producto_por_id(producto_id: str):\n    resultado = list(filter(lambda p: p.id == producto_id, productos))\n    if len(resultado):\n        return resultado[0]",
+        "detail": "practicas_activas.api_productos",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "practicas_activas.api_productos",
+        "description": "practicas_activas.api_productos",
+        "peekOfCode": "app = FastAPI()\nproductos = []\n@app.get('/')\ndef index():\n    return({'mensaje' : 'Bienvenidos a la API de Productos'})\n@app.get('/producto')\ndef obtener_productos():\n    return productos\n@app.post('/producto')\ndef crear_producto(producto: Producto):",
+        "detail": "practicas_activas.api_productos",
+        "documentation": {}
+    },
+    {
+        "label": "productos",
+        "kind": 5,
+        "importPath": "practicas_activas.api_productos",
+        "description": "practicas_activas.api_productos",
+        "peekOfCode": "productos = []\n@app.get('/')\ndef index():\n    return({'mensaje' : 'Bienvenidos a la API de Productos'})\n@app.get('/producto')\ndef obtener_productos():\n    return productos\n@app.post('/producto')\ndef crear_producto(producto: Producto):\n    producto.id = str(uuid())",
+        "detail": "practicas_activas.api_productos",
+        "documentation": {}
+    },
+    {
+        "label": "get_full_name",
+        "kind": 2,
+        "importPath": "S04_types.s04_01_autocompletado",
+        "description": "S04_types.s04_01_autocompletado",
+        "peekOfCode": "def get_full_name(first_name, last_name):\n    full_name = first_name.title() + \" \" + last_name.title()\n    return full_name\nprint(get_full_name(\"josé\", \"ortiz\"))\n#print(get_full_name(\"josé\", 0)) #Esto genera error AttributeError",
+        "detail": "S04_types.s04_01_autocompletado",
+        "documentation": {}
+    },
+    {
+        "label": "get_full_name",
+        "kind": 2,
+        "importPath": "S04_types.s04_02_mejoras_autocompletado",
+        "description": "S04_types.s04_02_mejoras_autocompletado",
+        "peekOfCode": "def get_full_name(first_name: str, last_name: str):\n    full_name = first_name.title() + \" \" + last_name.title()\n    return full_name\nprint(get_full_name(\"josé\", \"ortiz\"))\n#print(get_full_name(\"josé\", 0)) #Esto genera error AttributeError \nprint(get_full_name('julio', \"ordoñez\"))",
+        "detail": "S04_types.s04_02_mejoras_autocompletado",
+        "documentation": {}
+    },
+    {
+        "label": "get_name_with_age",
+        "kind": 2,
+        "importPath": "S04_types.s04_03_deteccion_errores",
+        "description": "S04_types.s04_03_deteccion_errores",
+        "peekOfCode": "def get_name_with_age(name: str, age: int):\n    name_with_age = name + ' is this old: ' + str(age)\n    return(name_with_age)",
+        "detail": "S04_types.s04_03_deteccion_errores",
+        "documentation": {}
+    },
+    {
+        "label": "process_items",
+        "kind": 2,
+        "importPath": "S04_types.s04_04_tipos_internos",
+        "description": "S04_types.s04_04_tipos_internos",
+        "peekOfCode": "def process_items(items: str, List[str]):\n    for e in items:\n        print(e.title)",
+        "detail": "S04_types.s04_04_tipos_internos",
+        "documentation": {}
+    },
+    {
+        "label": "process_items",
+        "kind": 2,
+        "importPath": "S04_types.s04_05_tipos_internos_list",
+        "description": "S04_types.s04_05_tipos_internos_list",
+        "peekOfCode": "def process_items(items: str, list[str]):\n    for e in items:\n        print(e.title)",
+        "detail": "S04_types.s04_05_tipos_internos_list",
+        "documentation": {}
+    },
+    {
+        "label": "process_items",
+        "kind": 2,
+        "importPath": "S04_types.s04_06_tuple_set",
+        "description": "S04_types.s04_06_tuple_set",
+        "peekOfCode": "def process_items(items_t: tuple[int, int, str], items_s: set[bytes]):\n    return items_t, items_s",
+        "detail": "S04_types.s04_06_tuple_set",
+        "documentation": {}
+    },
+    {
+        "label": "process_items",
+        "kind": 2,
+        "importPath": "S04_types.s04_07_dict",
+        "description": "S04_types.s04_07_dict",
+        "peekOfCode": "def process_items(prices: dict[str: float]):\n    for name, price in prices.items():\n        name, price",
+        "detail": "S04_types.s04_07_dict",
+        "documentation": {}
+    },
+    {
+        "label": "process_item",
+        "kind": 2,
+        "importPath": "S04_types.s04_08_union_pyrhon_36",
+        "description": "S04_types.s04_08_union_pyrhon_36",
+        "peekOfCode": "def process_item(item: Union[str, int]):\n    print(item)",
+        "detail": "S04_types.s04_08_union_pyrhon_36",
+        "documentation": {}
+    },
+    {
+        "label": "process_item",
+        "kind": 2,
+        "importPath": "S04_types.s04_09_union_python_310",
+        "description": "S04_types.s04_09_union_python_310",
+        "peekOfCode": "def process_item(item: int | str):\n    print(item)",
+        "detail": "S04_types.s04_09_union_python_310",
+        "documentation": {}
+    },
+    {
+        "label": "say_hi",
+        "kind": 2,
+        "importPath": "S04_types.s04_10_optional",
+        "description": "S04_types.s04_10_optional",
+        "peekOfCode": "def say_hi(name: Optional[str] = None):\n    if name is not None:\n        print(f\"Hola {name}\")\n    else:\n        print(\"Hola Mundo\")",
+        "detail": "S04_types.s04_10_optional",
+        "documentation": {}
+    },
+    {
+        "label": "say_hi",
+        "kind": 2,
+        "importPath": "S04_types.s04_11_params_opcionales",
+        "description": "S04_types.s04_11_params_opcionales",
+        "peekOfCode": "def say_hi(name: str | None = None):\n    if name is not None:\n        print(f\"Hola {name}\")\n    else:\n        print(\"Hola Mundo\")",
+        "detail": "S04_types.s04_11_params_opcionales",
+        "documentation": {}
+    },
+    {
+        "label": "Person",
+        "kind": 6,
+        "importPath": "S04_types.s04_12_clases",
+        "description": "S04_types.s04_12_clases",
+        "peekOfCode": "class Person:\n    def __init__(self, name: str):\n        self.name = name\ndef get_person_name(one_person: Person):\n    return one_person.name",
+        "detail": "S04_types.s04_12_clases",
+        "documentation": {}
+    },
+    {
+        "label": "get_person_name",
+        "kind": 2,
+        "importPath": "S04_types.s04_12_clases",
+        "description": "S04_types.s04_12_clases",
+        "peekOfCode": "def get_person_name(one_person: Person):\n    return one_person.name",
+        "detail": "S04_types.s04_12_clases",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "S04_types.s04_13_pydantic",
+        "description": "S04_types.s04_13_pydantic",
+        "peekOfCode": "class User(BaseModel):\n    id: int\n    name: str = 'John Ortiz Ordoñez'\n    signup_ts: datetime| None = None\n    friends: list[int] = []\n# Desde el exterior podríamos recibir estos datos:\nexternal_data = {\n    'id' : 1001,\n    'name' : \"Otro Nombre\",\n    'signup_ts' : '2023-12-16 13:45',",
+        "detail": "S04_types.s04_13_pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "external_data",
+        "kind": 5,
+        "importPath": "S04_types.s04_13_pydantic",
+        "description": "S04_types.s04_13_pydantic",
+        "peekOfCode": "external_data = {\n    'id' : 1001,\n    'name' : \"Otro Nombre\",\n    'signup_ts' : '2023-12-16 13:45',\n    'friends' : [1002, 1003, 1004]\n}\nuser = User(**external_data)\nprint(user)\nprint(user.id)",
+        "detail": "S04_types.s04_13_pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "user",
+        "kind": 5,
+        "importPath": "S04_types.s04_13_pydantic",
+        "description": "S04_types.s04_13_pydantic",
+        "peekOfCode": "user = User(**external_data)\nprint(user)\nprint(user.id)",
+        "detail": "S04_types.s04_13_pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "read_root",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def read_root():\n    return {\"Hello\" : \"World!\"}\n@app.get(\"/hola\")\ndef hola_mundo():\n    return {\"Hola\" : \"Mundo\"}\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Union[str, None] = None ):\n    return {\"item_id\": item_id, \"q\": q}\n@app.get(\"/calculadora\")\ndef calcular(operando_1: float, operando_2: float):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "hola_mundo",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def hola_mundo():\n    return {\"Hola\" : \"Mundo\"}\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Union[str, None] = None ):\n    return {\"item_id\": item_id, \"q\": q}\n@app.get(\"/calculadora\")\ndef calcular(operando_1: float, operando_2: float):\n    return {\"suma\": operando_1 + operando_2}\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "read_item",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def read_item(item_id: int, q: Union[str, None] = None ):\n    return {\"item_id\": item_id, \"q\": q}\n@app.get(\"/calculadora\")\ndef calcular(operando_1: float, operando_2: float):\n    return {\"suma\": operando_1 + operando_2}\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):\n    return {\"item_name\": item.name, \"item_id\": item.id, \"item_price\": item.price}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calcular",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def calcular(operando_1: float, operando_2: float):\n    return {\"suma\": operando_1 + operando_2}\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):\n    return {\"item_name\": item.name, \"item_id\": item.id, \"item_price\": item.price}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "update_item",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def update_item(item_id: int, item: Item):\n    return {\"item_name\": item.name, \"item_id\": item.id, \"item_price\": item.price}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\n#http://127.0.0.1:8000\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\" : \"World!\"}\n@app.get(\"/hola\")\ndef hola_mundo():\n    return {\"Hola\" : \"Mundo\"}\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Union[str, None] = None ):",
+        "detail": "main",
+        "documentation": {}
+    }
+]
