@@ -31,3 +31,9 @@ def crear_producto(producto: Producto):
     productos.append(producto)
     return {'mensaje' : 'Producto creado satisfactoriamente.'}
 
+@app.get('/producto/{producto_id}')
+def obtener_producto_por_id(producto_id: str):
+    for p in productos:
+        if p.id == producto_id:
+            return p
+    return {'mensaje' : f'el producto con el ID {producto_id} no se ha encontrado'}
