@@ -6,4 +6,3 @@ app = FastAPI()
 async def index():
     return {'mensaje' : 'Accceso satisfactorio'}
 
-
